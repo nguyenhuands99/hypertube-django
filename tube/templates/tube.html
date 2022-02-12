@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+<h2>Hypertube</h2>
+
+{% block login %}
+<a target="_blank" href="/login/">Login</a>
+{% endblock %}
+
+{% block search %}
+<br><br>
+<form action="" method="get">
+    <input class="search" id="search" name="q" type="text" value="{{ request.GET.q }}">
+    <input type="submit" value="search" />
+</form>
+{% endblock %}
+
+{% block video_list %}
+<p>{{ videos | length }} videos</p>
+{% for video in videos %}
+<a target="_blank" href="/tube/watch/{{ video.id }}/">{{ video.title }} </a>
+<br><br>
+{% endfor %}
+{% endblock %}
+
+
+{% block upload_video %}
+<a target="_blank" href="/tube/upload/">Upload video</a>
+{% endblock %}
+
+</body>
+</html>

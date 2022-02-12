@@ -1,0 +1,6 @@
+hypercar/hypercar/__pycache__/
+*.py[cod]
+*$py.class
+tests.py
+test/
+test_video.mp4
