@@ -1,10 +1,12 @@
 from django.urls import path
 
-from .views import TubeView
+from .views import TubeView, MyLoginView, MySignupView
 
 
 app_name = 'tube'
 
 urlpatterns = [
-    path('tube/', TubeView.as_view(), name='search_results'),
+    path('tube/', TubeView.as_view()),
+    path('login/', MyLoginView.as_view()),
+    path('signup/', MySignupView.as_view()),
 ]
